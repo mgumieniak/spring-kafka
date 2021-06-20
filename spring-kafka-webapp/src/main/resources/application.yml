@@ -1,1 +1,23 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9093
 
+
+  datasource.url: jdbc:postgresql://localhost:5432/postgres
+  datasource.username: postgres
+  datasource.password: postgres
+  jpa.database-platform: org.hibernate.dialect.PostgreSQLDialect
+  jpa.hibernate.ddl-auto: update
+
+tpd:
+  tx-prefix: tx-
+  topic-name: advice-topic
+  tx-topic-name: transaction-advice-topic
+  tx-sec-prefix: tx-sec-
+  tx-sec-topic-name: tx-sec-topic
+
+  messages-per-request: 1000
+
+logging.level.org.springframework.transaction: trace
+logging.level.org.springframework.kafka.transaction: debug
+#logging.level.org.springframework.jdbc: debug
