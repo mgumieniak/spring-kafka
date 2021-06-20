@@ -1,0 +1,29 @@
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'maven-publish'
+
+    group = 'com.mgumieniak'
+    version = '1.0'
+
+    sourceCompatibility = 1.11
+    targetCompatibility = 1.11
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        implementation "org.assertj:assertj-core:${assertj_version}"
+        compileOnly "org.projectlombok:lombok:${lombok_version}"
+
+        // mapper
+        implementation "org.mapstruct:mapstruct-jdk8:${mapstructVersion}"
+        annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+
+        annotationProcessor "org.projectlombok:lombok:${lombok_version}"
+    }
+}
+
+

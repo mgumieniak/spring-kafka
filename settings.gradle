@@ -1,0 +1,5 @@
+rootProject.name = 'spring-kafka'
+
+include 'spring-kafka-webapp'
+include 'spring-kafka-models'
+include 'spring-kafka-connectors'

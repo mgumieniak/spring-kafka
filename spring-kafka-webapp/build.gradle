@@ -1,0 +1,24 @@
+plugins {
+    id 'org.springframework.boot' version '2.3.7.RELEASE'
+}
+
+dependencies {
+    // BOM
+    implementation platform('org.springframework.boot:spring-boot-dependencies:2.3.7.RELEASE')
+
+    // PROJECTS
+    implementation project(':spring-kafka-models')
+
+    //SPRING
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // TEST
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
